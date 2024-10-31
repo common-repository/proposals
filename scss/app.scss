@@ -1,0 +1,181 @@
+// You custom settings file to override Foundation defaults
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+
+// ----------------------------------------
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "compass/css3";
+// @import "foundation/settings";
+// @import "foundation/functions/all";
+
+// Control which mixins you have access too
+
+// @import "foundation/mixins/clearfix";
+// @import "foundation/mixins/css-triangle";
+// @import "foundation/mixins/font-size";
+
+// Must include next two for semantic grid to work
+
+// @import "foundation/mixins/respond-to";
+// @import "foundation/mixins/semantic-grid";
+
+// @import "modular-scale";
+// @import "foundation/common/globals";
+
+// Must include the grid for any responsiveness
+
+// @import "foundation/components/grid";
+
+// Control which common styles get compiled
+
+// @import "foundation/common/typography";
+// @import "foundation/common/forms";
+
+// Control which components you get if customizing
+
+// @import "foundation/components/modules/buttons";
+// @import "foundation/components/modules/tabs";
+// @import "foundation/components/modules/ui";
+// @import "foundation/components/modules/topbar";
+// @import "foundation/components/modules/navbar";
+// @import "foundation/components/modules/orbit";
+// @import "foundation/components/modules/reveal";
+// @import "foundation/components/modules/offcanvas";
+
+html {
+     margin-top: 28px;     
+}
+body {
+     font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a {
+     font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+}
+h1 {
+     font-size: 37px;
+     line-height: 1.4;     
+}
+h2 {
+     font-size: 27px;
+     line-height: 1.4;
+}
+h3 {
+     font-size: 23px;
+     line-height: 1.4;     
+}
+h4 {
+     font-size: 17px;
+     line-height: 1.4;     
+}
+h5 {
+     font-size: 14px;
+     line-height: 1.4;     
+}
+h6 {
+     font-size: 14px;
+     line-height: 1.4;
+}
+p {
+     font-size: 16px;
+     line-height: 1.7;
+     margin-bottom: 23px;
+}
+li {
+     list-style: none;
+}
+.clearfix {
+     @include clearfix();
+}
+.page-meta {
+     h3 {
+          font-size: 17px;
+          margin-top: 0;
+     }
+     h4 {
+          color: #444;
+          font-size: 13px;
+          margin: 0;
+          text-transform: uppercase;
+     }
+}
+#secondary {
+     padding-top: 76px;
+     nav {
+          width: 334px;
+          position: fixed;
+          top: 76px;
+          opacity: .6;
+     
+          @include transition(.2s opacity ease);
+          li {
+               margin-bottom: 2px;
+               span {
+                    display: inline-block;
+                    margin-right: 16px;
+                    width: 20%;
+               }               
+          }
+          a {
+               color: #828282;
+               font-size: 12px;
+               span {
+                    font-weight: bold;
+               }
+          }
+     }
+     &:hover nav {
+          opacity: 1;
+     }
+}
+.footer-meta {
+
+}
+#comments {
+     .commentlist {
+          margin: 0;
+     }
+     .comment {
+          margin-bottom: 2em;
+          position: relative;
+     }
+     .comment-author {
+          margin-bottom: 1em;
+     }
+     .fn {
+          display: block;
+          font-size: 17px;
+     }
+     .edit-link {
+          display: block;
+          text-decoration: underline;
+     }     
+     .avatar {
+          border: 2px solid #fff;
+          border-radius: 64px;
+          box-shadow: 0 0 4px #ccc;
+          display: block;
+          margin: 0 2em 1em 0;
+     }
+     .reply {
+          display: none;
+     }
+     #respond {
+          @include innerRow();
+          #reply-title {
+               @include column(3);
+               margin-top: 0;
+          }    
+          form {
+               @include offsetBy(1);          
+               @include column(8);
+          }
+     }
+     .form-allowed-tags {
+          display: none;
+     }
+}
+
